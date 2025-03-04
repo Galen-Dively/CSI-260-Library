@@ -52,13 +52,14 @@ class Video_Games(LibraryItem):
         return f"Game: {self.name} by {self.studio}"
 
 # Testing the Video_Games class
-
+'''
 x = Video_Games("Minecraft", "132546", ["fun!", "adventure!"], "Sandbox Survival", "Mojang", "Xbox")
 print(x)
 print(x.match("Minecraft"))
 print(x.match("Mojang"))
 print(x.match("Xbox"))
 print(x.match("sandbox"))
+'''
 
 # Testing the CDs class (the length is in minutes)
 '''
