@@ -35,15 +35,35 @@ class CDs(LibraryItem):
     def make_a_da_short_string(self):
         return f"CD: {self.name} by {self.artist}"
 
-class Magazines(LibraryItem):
-    pass
+class Video_Games(LibraryItem):
+    def __init__(self, name, isbn, tags, genre, studio, console):
+        super().__init__(name, isbn, tags)
+        self.genre = genre
+        self.studio = studio
+        self.console = console
+    
+    def match(self, keyword):
+        return keyword.lower() in self.name.lower() or keyword.lower() in self.studio.lower() or keyword.lower() in self.console.lower() or keyword.lower() in self.genre.lower() or any(keyword.lower() in tag.lower() for tag in self.tags)
+    
+    def __str__(self):
+        return f"Game: {self.name}, Genre: {self.genre}, Studio: {self.studio}, Console: {self.console} ISBN: {self.isbn}, Tags: {self.tags}"
+    
+    def make_this_a_short_string(self):
+        return f"Game: {self.name} by {self.studio}"
 
-# Testing the Books class
-'''
-x = Books("Harry Potter", "123456", ["fantasy", "magic"], "J.K. Rowling", "Fantasy", 300)
+# Testing the Video_Games class
+
+x = Video_Games("Minecraft", "132546", ["fun!", "adventure!"], "Sandbox Survival", "Mojang", "Xbox")
 print(x)
-print(x.match("Harry"))
-print(x.match("Rowling"))
-print(x.match("magic"))
-print(x.match("fantasy"))
+print(x.match("Minecraft"))
+print(x.match("Mojang"))
+print(x.match("Xbox"))
+print(x.match("sandbox"))
+
+# Testing the CDs class (the length is in minutes)
+'''
+x = CDs("Goodbye Yellow Brick Road", "123457", ["classic rock", "rock"], 72, "Elton John")
+print(x)
+print(x.match("Yellow"))
+print(x.match("Elton"))
 '''
