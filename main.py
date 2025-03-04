@@ -1,4 +1,4 @@
-from catalog1 import Catalog
+from catalog import Catalog
 from SubClasses import Books, CDs, Video_Games
 
 def print_menu():
