@@ -4,7 +4,7 @@ from LibraryItem import *
 adding the three sub classes for the project being: Books,  CDs, and Magazines for the parent class LibraryItem 
 '''
 
-class Books(LibraryItem):
+class Books(AbstractLibraryItem):
     def __init__(self, name, isbn, tags, author, genre, page_numbers):
         super().__init__(name, isbn, tags)
         self.author = author
@@ -20,7 +20,7 @@ class Books(LibraryItem):
     def to_short_string(self):
         return f"Book: {self.name} by {self.author}"
 
-class CDs(LibraryItem):
+class CDs(AbstractLibraryItem):
     def __init__(self, name, isbn, tags, cd_length, artist):
         super().__init__(name, isbn, tags)
         self.cd_length = cd_length
@@ -35,7 +35,7 @@ class CDs(LibraryItem):
     def make_a_da_short_string(self):
         return f"CD: {self.name} by {self.artist}"
 
-class Video_Games(LibraryItem):
+class Video_Games(AbstractLibraryItem):
     def __init__(self, name, isbn, tags, genre, studio, console):
         super().__init__(name, isbn, tags)
         self.genre = genre
