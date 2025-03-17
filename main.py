@@ -7,7 +7,9 @@ def print_menu():
     print("2. Print the entire catalog")
     print("3. Add item to catalog")
     print("4. Remove item from catalog")
-    print("5. Exit")
+    print("5. Open catalog from file")
+    print("6. Save catalog to file")
+    print("7. Exit")
     print("Choose an option: ", end="")
 
 def main():
@@ -70,8 +72,13 @@ def main():
                 print("Item removed from catalog.")
             else:
                 print("Item not found in catalog.")
-
         elif choice == '5':
+            print("Saving current catalog to file")
+            catalog.save_as_pickle()
+        elif choice == '6':
+            print("Loading save from file")
+            catalog.load_from_pickle()
+        elif choice == '7':
             print("Exiting the program.")
             break
 

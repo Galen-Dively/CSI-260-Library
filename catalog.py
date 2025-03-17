@@ -33,18 +33,4 @@ class Catalog:
             self._items = pickle.load(f)
 
 
-# """"Why are we calling the base class?"""
-# # class LibraryItem:
-# #     def __init__(self, title, author):
-# #         self.title = title
-# #         self.author = author
 
-# class Book(AbstractLibraryItem):
-#     def __init__(self, title, author, isbn):
-#         super().__init__(title, author)
-#         self.isbn = isbn
-
-# class DVD(AbstractLibraryItem):
-#     def __init__(self, title, director, duration):
-#         super().__init__(title, director)
-#         self.duration = duration

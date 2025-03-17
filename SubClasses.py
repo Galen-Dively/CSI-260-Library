@@ -32,7 +32,7 @@ class CDs(AbstractLibraryItem):
     def __str__(self):
         return f"CD: {self.name}, Artist: {self.artist}, Length: {self.cd_length}, ISBN: {self.isbn}, Tags: {self.tags}"
     
-    def make_a_da_short_string(self):
+    def to_short_string(self):
         return f"CD: {self.name} by {self.artist}"
 
 class Video_Games(AbstractLibraryItem):
@@ -48,7 +48,7 @@ class Video_Games(AbstractLibraryItem):
     def __str__(self):
         return f"Game: {self.name}, Genre: {self.genre}, Studio: {self.studio}, Console: {self.console} ISBN: {self.isbn}, Tags: {self.tags}"
     
-    def make_this_a_short_string(self):
+    def to_short_string(self):
         return f"Game: {self.name} by {self.studio}"
 
 # Testing the Video_Games class
