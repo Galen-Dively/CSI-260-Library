@@ -25,13 +25,12 @@ class Catalog:
         return results
     
     def save_as_pickle(self):
-        with open("catalog.pkl", "w") as f :
-            f.write(pickle.dumps(self._items))
+        with open("catalog.pkl", "wb") as f :
+            pickle.dump(self._items, f)
 
     def load_from_pickle(self):
-        with open("catalog.pkl", "r") as f:
-            self._items = 
-
+        with open("catalog.pkl", "rb") as f:
+            self._items = pickle.load(f)
 
 
 # """"Why are we calling the base class?"""
