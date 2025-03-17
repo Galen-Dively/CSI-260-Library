@@ -17,9 +17,9 @@ class CategoryTag:
     
 
 
-j = CategoryTag("Action")
-i = CategoryTag("Thriller")
+# j = CategoryTag("Action")
+# i = CategoryTag("Thriller")
 
-print(i)
-print(j)
-print(CategoryTag.all_category_tags())
+# print(i)
+# print(j)
+# print(CategoryTag.all_category_tags())
