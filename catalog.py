@@ -1,3 +1,5 @@
+import pickle
+
 class Catalog:
     def __init__(self, name):
         self.name = name
@@ -21,18 +23,29 @@ class Catalog:
             if any(query.lower() in str(getattr(item, attr)).lower() for attr in vars(item)):
                 results.append(item)
         return results
+    
+    def save_as_pickle(self):
+        with open("catalog.pkl", "w") as f :
+            f.write(pickle.dumps(self._items))
 
-class LibraryItem:
-    def __init__(self, title, author):
-        self.title = title
-        self.author = author
+    def load_from_pickle(self):
+        with open("catalog.pkl", "r") as f:
+            self._items = 
 
-class Book(LibraryItem):
-    def __init__(self, title, author, isbn):
-        super().__init__(title, author)
-        self.isbn = isbn
 
-class DVD(LibraryItem):
-    def __init__(self, title, director, duration):
-        super().__init__(title, director)
-        self.duration = duration
+
+# """"Why are we calling the base class?"""
+# # class LibraryItem:
+# #     def __init__(self, title, author):
+# #         self.title = title
+# #         self.author = author
+
+# class Book(AbstractLibraryItem):
+#     def __init__(self, title, author, isbn):
+#         super().__init__(title, author)
+#         self.isbn = isbn
+
+# class DVD(AbstractLibraryItem):
+#     def __init__(self, title, director, duration):
+#         super().__init__(title, director)
+#         self.duration = duration
