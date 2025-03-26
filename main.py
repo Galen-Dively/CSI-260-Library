@@ -1,3 +1,22 @@
+"""
+Library Catalog Management Application
+
+This script provides a command-line interface for managing a library catalog.
+Users can:
+- Search for items
+- View the entire catalog
+- Add new items (books, CDs, video games)
+- Remove items
+- Save and load the catalog using pickle serialization
+
+The application supports three types of library items:
+- Books
+- CDs
+- Video Games
+
+Each item can be searched, added, and removed from the catalog.
+"""
+
 from catalog import Catalog
 from SubClasses import Books, CDs, Video_Games
 
